@@ -242,12 +242,11 @@ SousChef.prototype.intentHandlers = {
         // Find by ingredient API => return the id of the dish
         // getAnlyzedRecipeInstruction API => return JSON we need to parse it
         var reaction = intent.slots.value;
-// ==============================================================================================================
         var ingredientsList = session.attributes.ingredients;
         
         console.log("Ingredients List: " + ingredients);
 
-// ==============================================================================================================
+
         var recipeObject = getRecipeInfo(ingredientsList);
 
         getRecipeSteps(recipeObject.id, function(events) {
